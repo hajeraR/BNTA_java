@@ -1,17 +1,20 @@
 package com.hajera.ExFour;
 
-public class Questions {
-    String question;
+import java.io.Serializable;
 
-    public String getQuestion() {
-        return question;
-    }
+public class Questions implements Serializable {
 
-    public void setQuestion(String question) {
+
+    private String question;
+
+    public Questions (String question) {
         this.question = question;
     }
 
-    public Questions (String question){
-        this.question = question;
+    @Override
+    public String toString() {
+        return "Questions{" +
+                "question='" + question + '\'' +
+                '}';
     }
 }

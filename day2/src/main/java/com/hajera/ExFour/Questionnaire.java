@@ -1,26 +1,30 @@
 package com.hajera.ExFour;
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Questionnaire {
-   private int id;
+public class Questionnaire implements Serializable {
+   private String id;
    private LocalDate createdAtDate;
-   Person person;
-   Questions question;
+//   private Person person;
+//   private Questions[] question;
+//    private int numberOfQuestions;
 
-    public Questionnaire(int id, LocalDate createdAtDate, Person person, Questions question) {
+
+    public Questionnaire(String id, LocalDate createdAtDate) {
         this.id = id;
         this.createdAtDate = createdAtDate;
-        this.person = person;
-        this.question = question;
+//        this.person = person;
+//        this.question = new Questions[numberOfQuestions];
+
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -32,19 +36,12 @@ public class Questionnaire {
         this.createdAtDate = createdAtDate;
     }
 
-    public Person getPerson() {
-        return person;
-    }
 
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
-    public Questions getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(Questions question) {
-        this.question = question;
+    @Override
+    public String toString() {
+        return "Questionnaire{" +
+                "id=" + id +
+                ", createdAtDate=" + createdAtDate +
+                '}';
     }
 }

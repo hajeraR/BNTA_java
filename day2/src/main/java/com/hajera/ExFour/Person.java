@@ -1,27 +1,25 @@
 package com.hajera.ExFour;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Person {
-    String firstName;
-    String lastName;
-    String email;
-    LocalDate dateOfBirth;
+public class Person implements Serializable {
+    private String name;
+    private String email;
+    private LocalDate dateOfBirth;
 
-    public String getFirstName() {
-        return firstName;
+    public Person(String name, String email, LocalDate dateOfBirth) {
+        this.name = name;
+        this.email = email;
+        this.dateOfBirth = dateOfBirth;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getName() {
+        return name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -40,12 +38,12 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Person (String firstName, String lastName, String email, LocalDate dateOfBirth){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
     }
 }
